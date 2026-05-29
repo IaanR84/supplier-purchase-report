@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using SupplierPurchaseReport.Repositories;
 using SupplierPurchaseReport.Services;
+using SupplierPurchaseReport.Settings;
 
 // 1. Build the configuration object
 var config = new ConfigurationBuilder()
@@ -8,16 +9,26 @@ var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)
     .Build();
 
+var emailSettings = config
+    .GetSection("Email")
+    .Get<EmailSettings>();
+
+var reportSettings = config
+    .GetSection("Report")
+    .Get<ReportSettings>();
+
+
+
 // 2. Read values out by their path
 var connectionString = config.GetConnectionString("DefaultConnection");
 
 var purchaseRepository = new PurchaseRepository(connectionString);
 var csvExportService = new CsvExportService();
 var emailService = new EmailService(
-    smtpServer: config["Email:SmtpServer"],
-    smtpPort: int.Parse(config["Email:SmtpPort"]),
-    username: config["Email:Username"],
-    password: config["Email:Password"]
+    smtpServer: emailSettings.SmtpServer,
+    smtpPort: emailSettings.SmtpPort,
+    username: emailSettings.Username,
+    password: emailSettings.Password
 );
 
 var reportService = new SupplierReportService(
@@ -27,10 +38,10 @@ var reportService = new SupplierReportService(
 );
 
 await reportService.RunDailyReport(
-    supplierName: config["Report:SupplierName"],
+    supplierName: reportSettings.SupplierName,
     month: DateTime.Now.Month,
     year: DateTime.Now.Year,
-    recipientEmail: config["Report:RecipientEmail"]
+    recipientEmail: reportSettings.RecipientEmail
 );
 
 Console.WriteLine("Report sent successfully.");

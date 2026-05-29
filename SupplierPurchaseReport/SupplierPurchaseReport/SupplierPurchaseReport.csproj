@@ -10,6 +10,18 @@
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.79" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="7.1.0-preview1.26124.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="11.0.0-preview.4.26230.115" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="11.0.0-preview.4.26230.115" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Settings\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

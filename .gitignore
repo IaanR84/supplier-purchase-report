@@ -8,5 +8,5 @@ obj/
 *.suo
 
 ## Credentials — never push these
-appsettings.Development.json
+appsettings.json
 appsettings.Production.json

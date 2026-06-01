@@ -3,6 +3,7 @@ using SupplierPurchaseReport.Repositories;
 using SupplierPurchaseReport.Services;
 using SupplierPurchaseReport.Settings;
 
+
 // 1. Build the configuration object
 var config = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
@@ -13,16 +14,12 @@ var emailSettings = config
     .GetSection("Email")
     .Get<EmailSettings>();
 
-var reportSettings = config
-    .GetSection("Report")
-    .Get<ReportSettings>();
-
-
 
 // 2. Read values out by their path
 var connectionString = config.GetConnectionString("DefaultConnection");
 
 var purchaseRepository = new PurchaseRepository(connectionString);
+var supplierRepository = new SupplierRepository(connectionString);
 var csvExportService = new CsvExportService();
 var emailService = new EmailService(
     smtpServer: emailSettings.SmtpServer,
@@ -37,11 +34,16 @@ var reportService = new SupplierReportService(
     emailService
 );
 
-await reportService.RunDailyReport(
-    supplierName: reportSettings.SupplierName,
-    month: DateTime.Now.Month,
-    year: DateTime.Now.Year,
-    recipientEmail: reportSettings.RecipientEmail
-);
+var suppliers = await supplierRepository.GetAllSuppliers();
+
+foreach (var supplier in suppliers)
+{
+    await reportService.RunDailyReport(
+        supplierName: supplier.SupplierName,
+        month: DateTime.Now.Month,
+        year: DateTime.Now.Year,
+        recipientEmail: supplier.RecipientEmail
+    );  
+}
 
 Console.WriteLine("Report sent successfully.");

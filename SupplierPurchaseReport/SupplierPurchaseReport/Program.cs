@@ -4,7 +4,6 @@ using SupplierPurchaseReport.Services;
 using SupplierPurchaseReport.Settings;
 
 
-// 1. Build the configuration object
 var config = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: false)
@@ -14,9 +13,9 @@ var emailSettings = config
     .GetSection("Email")
     .Get<EmailSettings>();
 
-
-// 2. Read values out by their path
 var connectionString = config.GetConnectionString("DefaultConnection");
+
+ValidateSettings(connectionString, emailSettings);
 
 var purchaseRepository = new PurchaseRepository(connectionString);
 var supplierRepository = new SupplierRepository(connectionString);
@@ -61,3 +60,39 @@ foreach (var supplier in suppliers)
 }
 
 Console.WriteLine($"Successful reports: {successCount}, Failed reports: {failCount}");
+
+static void ValidateSettings(string? connectionString, EmailSettings? emailSettings)
+{
+    var errors = new List<string>();
+
+    if (string.IsNullOrWhiteSpace(connectionString))
+        errors.Add("ConnectionStrings:DefaultConnection");
+
+    if (emailSettings == null)
+    {
+        errors.Add("Email section (entire section missing)");
+    }
+    else
+    {
+        if (string.IsNullOrWhiteSpace(emailSettings.SmtpServer))
+            errors.Add("Email:SmtpServer");
+
+        if (emailSettings.SmtpPort == 0)
+            errors.Add("Email:SmtpPort");
+
+        if (string.IsNullOrWhiteSpace(emailSettings.Username))
+            errors.Add("Email:Username");
+
+        if (string.IsNullOrWhiteSpace(emailSettings.Password))
+            errors.Add("Email:Password");
+    }
+
+    if (errors.Count > 0)
+    {
+        Console.WriteLine("Startup validation failed. The following settings are missing or invalid:");
+        foreach (var error in errors)
+            Console.WriteLine($"  - {error}");
+
+        Environment.Exit(1);
+    }
+}

@@ -12,4 +12,4 @@ namespace SupplierPurchaseReport.Settings
         public string RecipientEmail { get; set; }
     }
 }
-}
+

@@ -2,6 +2,16 @@
 using SupplierPurchaseReport.Repositories;
 using SupplierPurchaseReport.Services;
 using SupplierPurchaseReport.Settings;
+using Serilog;
+
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Information()
+    .WriteTo.File(
+        path: "logs/supplier-report-.txt",
+        rollingInterval: RollingInterval.Day
+    )
+    .CreateLogger();
 
 
 var config = new ConfigurationBuilder()
@@ -54,13 +64,14 @@ foreach (var supplier in suppliers)
         successCount++;
     } catch (Exception ex)
     {
-        Console.WriteLine($"Error occurred while processing supplier '{supplier.SupplierName}': {ex.Message}");
+        Log.Error(ex, $"Error occurred while processing supplier '{supplier.SupplierName}'");
         failCount++;
     }
 }
 
-Console.WriteLine($"Successful reports: {successCount}, Failed reports: {failCount}");
+Log.Information($"Successful reports: {successCount}, Failed reports: {failCount}");
 
+Log.CloseAndFlush();
 static void ValidateSettings(string? connectionString, EmailSettings? emailSettings)
 {
     var errors = new List<string>();
@@ -89,10 +100,10 @@ static void ValidateSettings(string? connectionString, EmailSettings? emailSetti
 
     if (errors.Count > 0)
     {
-        Console.WriteLine("Startup validation failed. The following settings are missing or invalid:");
-        foreach (var error in errors)
-            Console.WriteLine($"  - {error}");
+        var errorList = string.Join(", ", errors);
+        Log.Error("Startup validation failed. Missing settings: {Settings}", errorList);
 
         Environment.Exit(1);
+
     }
 }

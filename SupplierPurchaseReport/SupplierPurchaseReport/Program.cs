@@ -7,6 +7,7 @@ using Serilog;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
+    .WriteTo.Console()
     .WriteTo.File(
         path: "logs/supplier-report-.txt",
         rollingInterval: RollingInterval.Day
@@ -102,6 +103,8 @@ static void ValidateSettings(string? connectionString, EmailSettings? emailSetti
     {
         var errorList = string.Join(", ", errors);
         Log.Error("Startup validation failed. Missing settings: {Settings}", errorList);
+
+        Log.CloseAndFlush();
 
         Environment.Exit(1);
 

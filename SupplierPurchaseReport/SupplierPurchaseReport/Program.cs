@@ -26,7 +26,8 @@ var emailSettings = config
 
 var connectionString = config.GetConnectionString("DefaultConnection");
 
-ValidateSettings(connectionString, emailSettings);
+if (!ValidateSettings(connectionString, emailSettings))
+    return 1;
 
 var purchaseRepository = new PurchaseRepository(connectionString);
 var supplierRepository = new SupplierRepository(connectionString);
@@ -73,7 +74,9 @@ foreach (var supplier in suppliers)
 Log.Information($"Successful reports: {successCount}, Failed reports: {failCount}");
 
 Log.CloseAndFlush();
-static void ValidateSettings(string? connectionString, EmailSettings? emailSettings)
+
+return 0;
+static bool ValidateSettings(string? connectionString, EmailSettings? emailSettings)
 {
     var errors = new List<string>();
 
@@ -103,10 +106,12 @@ static void ValidateSettings(string? connectionString, EmailSettings? emailSetti
     {
         var errorList = string.Join(", ", errors);
         Log.Error("Startup validation failed. Missing settings: {Settings}", errorList);
-
         Log.CloseAndFlush();
-
-        Environment.Exit(1);
-
+        return false;
     }
+
+    return true;
 }
+
+
+

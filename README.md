@@ -14,20 +14,29 @@ Previously this was done manually. This system makes it automatic, repeatable, a
 
 ## How it works
 
-The system is built as four separate service classes, each with a single responsibility:
+The system is built as 16 separate service classes, each with a single responsibility:
 
 | Class | Responsibility |
 |---|---|
 | `Purchase` | Defines the shape of a purchase record |
+| `Supplier` | Defines the suppliers name and email |
+| `IPurchaseRepository` | Contract guaranteeing purchase data retrieval — allows any implementation to be swapped without changing dependent classes |
+| `ISupplierRepository` | Contract guaranteeing supplier data retrieval — allows any implementation to be swapped without changing dependent classes |
 | `PurchaseRepository` | Fetches purchases from SQL Server by supplier and date |
+| `SupplierRepository` | Fetches SupplierName and RecipientEmail from SQL Server |
 | `CsvExportService` | Formats and exports purchase data to CSV |
 | `EmailService` | Attaches the CSV and sends it via SMTP |
+| `ICsvExportService` | Contract guaranteeing creation of csv — allows any implementation to be swapped without changing dependent classes |
+| `IEmailService` | Contract guaranteeing an email sending capability — allows any implementation to be swapped without changing dependent classes |
+| `ISupplierReportService` | Contract guaranteeing full process running — allows any implementation to be swapped without changing dependent classes |
 | `SupplierReportService` | Orchestrates the full process end-to-end |
+| `EmailSettings` | Holds email settings stored in appsettings |
+| `ReportSettings` | Holds report settings stored in appsettings  |
 
 ### Running a report
 
 ```csharp
-await supplierReportService.RunMonthlyReport(
+await supplierReportService.RunDailyReport(
     "supplier1",
     5,
     2026,
@@ -44,7 +53,8 @@ One call fetches the data, builds the file, and delivers it.
 - **Dapper** — lightweight SQL mapping
 - **SQL Server** — data source
 - **SMTP** — email delivery
-
+- **Serilog** — structured logging with daily rolling file sink
+- **Microsoft.Extensions.DependencyInjection** — service registration and dependency resolution
 ---
 
 ## Project structure
@@ -52,13 +62,26 @@ One call fetches the data, builds the file, and delivers it.
 ```
 SupplierPurchaseReport/
 ├── Models/
-│   └── Purchase.cs
+│   ├── Purchase.cs
+│   └── Supplier.cs
 ├── Repositories/
-│   └── PurchaseRepository.cs
+│   ├── IPurchaseRepository.cs
+│   ├── ISupplierRepository.cs
+│   ├── PurchaseRepository.cs
+│   └── SupplierRepository.cs
 ├── Services/
+│   ├── ICsvExportService.cs
+│   ├── IEmailService.cs
+│   ├── ISupplierReportService.cs
 │   ├── CsvExportService.cs
 │   ├── EmailService.cs
 │   └── SupplierReportService.cs
+├── Settings/
+│   ├── EmailSettings.cs
+│   └── ReportSettings.cs
+├── logs/
+├── appsettings.json
+└── Program.cs
 ```
 
 ---

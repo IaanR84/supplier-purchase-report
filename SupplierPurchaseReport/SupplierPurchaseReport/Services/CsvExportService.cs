@@ -3,7 +3,7 @@ using SupplierPurchaseReport.Models;
 
 namespace SupplierPurchaseReport.Services
 {
-    public class CsvExportService
+    public class CsvExportService: ICsvExportService
     {
         public byte[] Export(List<Purchase> purchases)
         {

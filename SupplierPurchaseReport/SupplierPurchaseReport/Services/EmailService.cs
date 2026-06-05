@@ -3,7 +3,7 @@ using System.Net.Mail;
 
 namespace SupplierPurchaseReport.Services
 {
-    public class EmailService
+    public class EmailService : IEmailService
     {
         private readonly string _smtpServer;
         private readonly int _smtpPort;

@@ -4,7 +4,7 @@ using SupplierPurchaseReport.Models;
 
 namespace SupplierPurchaseReport.Repositories
 {
-    public class PurchaseRepository
+    public class PurchaseRepository: IPurchaseRepository
     {
         private readonly string _connectionString;
 

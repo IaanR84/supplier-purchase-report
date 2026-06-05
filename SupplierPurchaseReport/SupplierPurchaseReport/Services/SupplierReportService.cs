@@ -3,16 +3,16 @@ using SupplierPurchaseReport.Services;
 
 namespace SupplierPurchaseReport.Services
 {
-    public class SupplierReportService
+    public class SupplierReportService: ISupplierReportService
     {
-        private readonly PurchaseRepository _purchaseRepository;
-        private readonly CsvExportService _csvExportService;
-        private readonly EmailService _emailService;
+        private readonly IPurchaseRepository _purchaseRepository;
+        private readonly ICsvExportService _csvExportService;
+        private readonly IEmailService _emailService;
 
         public SupplierReportService(
-            PurchaseRepository purchaseRepository,
-            CsvExportService csvExportService,
-            EmailService emailService)
+      IPurchaseRepository purchaseRepository,
+      ICsvExportService csvExportService,
+      IEmailService emailService)
         {
             _purchaseRepository = purchaseRepository;
             _csvExportService = csvExportService;

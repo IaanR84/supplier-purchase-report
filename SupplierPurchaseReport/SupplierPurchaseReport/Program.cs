@@ -3,7 +3,7 @@ using SupplierPurchaseReport.Repositories;
 using SupplierPurchaseReport.Services;
 using SupplierPurchaseReport.Settings;
 using Serilog;
-
+using Microsoft.Extensions.DependencyInjection;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
@@ -29,21 +29,24 @@ var connectionString = config.GetConnectionString("DefaultConnection");
 if (!ValidateSettings(connectionString, emailSettings))
     return 1;
 
-var purchaseRepository = new PurchaseRepository(connectionString);
-var supplierRepository = new SupplierRepository(connectionString);
-var csvExportService = new CsvExportService();
-var emailService = new EmailService(
+var services = new ServiceCollection();
+
+services.AddSingleton<IPurchaseRepository>(
+    new PurchaseRepository(connectionString));
+services.AddSingleton<ISupplierRepository>(
+    new SupplierRepository(connectionString));
+services.AddSingleton<ICsvExportService, CsvExportService>();
+services.AddSingleton<IEmailService>(new EmailService(
     smtpServer: emailSettings.SmtpServer,
     smtpPort: emailSettings.SmtpPort,
     username: emailSettings.Username,
     password: emailSettings.Password
-);
+));
+services.AddSingleton<ISupplierReportService, SupplierReportService>();
 
-var reportService = new SupplierReportService(
-    purchaseRepository,
-    csvExportService,
-    emailService
-);
+var provider = services.BuildServiceProvider();
+var reportService = provider.GetRequiredService<ISupplierReportService>();
+var supplierRepository = provider.GetRequiredService<ISupplierRepository>();
 
 var suppliers = await supplierRepository.GetAllSuppliers();
 

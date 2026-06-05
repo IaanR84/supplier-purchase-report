@@ -5,7 +5,7 @@ using Dapper;
 
 namespace SupplierPurchaseReport.Repositories
 {
-    public class SupplierRepository
+    public class SupplierRepository: ISupplierRepository
     {
         private readonly string _connectionString;
 

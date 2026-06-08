@@ -7,10 +7,10 @@ namespace SupplierPurchaseReport.Settings
     public class EmailSettings
     {
 
-        public string SmtpServer { get; set; }
-        public int SmtpPort { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public required string SmtpServer { get; set; }
+        public required int SmtpPort { get; set; }
+        public required string Username { get; set; }
+        public required string Password { get; set; }
     }
 
 }

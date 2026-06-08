@@ -22,9 +22,9 @@ var config = new ConfigurationBuilder()
 
 var emailSettings = config
     .GetSection("Email")
-    .Get<EmailSettings>();
+    .Get<EmailSettings>()!;
 
-var connectionString = config.GetConnectionString("DefaultConnection");
+var connectionString = config.GetConnectionString("DefaultConnection")!;
 
 if (!ValidateSettings(connectionString, emailSettings))
     return 1;

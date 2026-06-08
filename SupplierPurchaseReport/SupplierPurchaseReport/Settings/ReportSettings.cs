@@ -8,8 +8,8 @@ namespace SupplierPurchaseReport.Settings
 {
     public class ReportSettings
     {
-        public string SupplierName { get; set; }
-        public string RecipientEmail { get; set; }
+        public required string SupplierName { get; set; }
+        public required string RecipientEmail { get; set; }
     }
 }
 

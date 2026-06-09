@@ -25,6 +25,9 @@ namespace SupplierPurchaseReport.Services
             var purchases = await _purchaseRepository
                 .GetBySupplier(supplierName, month, year);
 
+            if (purchases == null || !purchases.Any())
+                return;
+
             var csvFile = _csvExportService
                 .Export(purchases);
 

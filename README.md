@@ -82,6 +82,8 @@ SupplierPurchaseReport/
 ├── logs/
 ├── appsettings.json
 └── Program.cs
+└── SupplierPurchaseReport.Tests
+└── UnitTest1.cs
 ```
 
 ---

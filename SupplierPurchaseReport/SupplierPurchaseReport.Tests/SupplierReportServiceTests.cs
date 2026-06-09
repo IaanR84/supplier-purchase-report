@@ -33,7 +33,8 @@ namespace SupplierPurchaseReport.Tests
             var service = new SupplierReportService(
                 mockPurchaseRepository.Object,
                 mockCsvExportService.Object,
-                mockEmailService.Object
+                mockEmailService.Object,
+                new Mock<Microsoft.Extensions.Logging.ILogger<SupplierReportService>>().Object
             );
 
             // Act
@@ -61,7 +62,8 @@ namespace SupplierPurchaseReport.Tests
             var service = new SupplierReportService(
                 mockPurchaseRepository.Object,
                 mockCsvExportService.Object,
-                mockEmailService.Object
+                mockEmailService.Object,
+                new Mock<Microsoft.Extensions.Logging.ILogger<SupplierReportService>>().Object
             );
 
             // Act
@@ -72,6 +74,33 @@ namespace SupplierPurchaseReport.Tests
                 e => e.SendAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<byte[]>()),
                 Times.Never);
         }
+        [Fact]
+        public async Task RunDailyReport_DoesNotSendEmail_WhenExceptionThrown()
+        {
+            // Arrange
+            var mockEmailService = new Mock<IEmailService>();
+            var mockPurchaseRepository = new Mock<IPurchaseRepository>();
+            var mockCsvExportService = new Mock<ICsvExportService>();
 
+            mockPurchaseRepository
+                .Setup(r => r.GetBySupplier(It.IsAny<string>(), It.IsAny<int>(), It.IsAny<int>()))
+                .ThrowsAsync(new Exception("Database error")
+                );
+
+            var service = new SupplierReportService(
+                mockPurchaseRepository.Object,
+                mockCsvExportService.Object,
+                mockEmailService.Object,
+                new Mock<Microsoft.Extensions.Logging.ILogger<SupplierReportService>>().Object
+            );
+
+            // Act
+            await service.RunDailyReport("TestSupplier", 6, 2026, "test@test.com");
+
+            // Assert
+            mockEmailService.Verify(
+                e => e.SendAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<byte[]>()),
+                Times.Never);
+        }
     }
 }

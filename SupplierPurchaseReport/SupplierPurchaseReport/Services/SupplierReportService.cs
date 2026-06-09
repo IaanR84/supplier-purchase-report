@@ -1,28 +1,33 @@
 ﻿using SupplierPurchaseReport.Repositories;
 using SupplierPurchaseReport.Services;
+using Microsoft.Extensions.Logging;
 
 namespace SupplierPurchaseReport.Services
 {
+    
     public class SupplierReportService: ISupplierReportService
     {
         private readonly IPurchaseRepository _purchaseRepository;
         private readonly ICsvExportService _csvExportService;
         private readonly IEmailService _emailService;
-
+        private readonly ILogger<SupplierReportService> _logger;
         public SupplierReportService(
       IPurchaseRepository purchaseRepository,
       ICsvExportService csvExportService,
-      IEmailService emailService)
+      IEmailService emailService,
+      ILogger<SupplierReportService> logger)
         {
             _purchaseRepository = purchaseRepository;
             _csvExportService = csvExportService;
             _emailService = emailService;
+            _logger = logger;
         }
 
-        public async Task RunDailyReport(
-            string supplierName, int month, int year, string recipientEmail)
+        public async Task RunDailyReport(string supplierName, int month, int year, string recipientEmail)
         {
-            var purchases = await _purchaseRepository
+            try
+            {
+                var purchases = await _purchaseRepository
                 .GetBySupplier(supplierName, month, year);
 
             if (purchases == null || !purchases.Any())
@@ -34,8 +39,14 @@ namespace SupplierPurchaseReport.Services
             await _emailService
                 .SendAsync(recipientEmail,
                            $"Daily Purchases - {supplierName}",
-                           $"{supplierName}_{month}_{year}.csv",
+                           $"{supplierName}_{month}_{year}.csv",             
                            csvFile);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to run daily report for {SupplierName}", supplierName);
+            }
         }
     }
+    
 }

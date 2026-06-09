@@ -20,7 +20,7 @@ namespace SupplierPurchaseReport.Repositories
             await connection.OpenAsync();
 
             var sql = @"
-            Select SupplierName,
+            Select Name,
                    RecipientEmail
                 from Supplier";
 

@@ -11,7 +11,7 @@ namespace SupplierPurchaseReport.Models
         public required string Code { get; set; }
         public required string Name { get; set; }
         public required DateTime DatePurchased { get; set; }
-        public required string Branchnr { get; set; }
+        public required int BranchNr { get; set; }
         public required string BranchName { get; set; }
         public required decimal Amount { get; set; }
 

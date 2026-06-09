@@ -23,7 +23,7 @@ namespace SupplierPurchaseReport.Tests
                     {
                         Name = "Test Item",
                         Code = "001",
-                        Branchnr = "1",
+                        BranchNr = 1,
                         BranchName = "Test Branch",
                         DatePurchased = DateTime.Now,
                         Amount = 100

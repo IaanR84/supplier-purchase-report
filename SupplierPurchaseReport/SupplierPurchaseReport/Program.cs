@@ -31,6 +31,7 @@ if (!ValidateSettings(connectionString, emailSettings))
 
 var services = new ServiceCollection();
 
+services.AddLogging(loggingBuilder => loggingBuilder.AddSerilog());
 services.AddSingleton<IPurchaseRepository>(
     new PurchaseRepository(connectionString));
 services.AddSingleton<ISupplierRepository>(
@@ -40,7 +41,8 @@ services.AddSingleton<IEmailService>(new EmailService(
     smtpServer: emailSettings.SmtpServer,
     smtpPort: emailSettings.SmtpPort,
     username: emailSettings.Username,
-    password: emailSettings.Password
+    password: emailSettings.Password,
+    from: emailSettings.From
 ));
 services.AddSingleton<ISupplierReportService, SupplierReportService>();
 
@@ -60,7 +62,7 @@ foreach (var supplier in suppliers)
     try
     {
         await reportService.RunDailyReport(
-            supplierName: supplier.SupplierName,
+            supplierName: supplier.Name,
             month: DateTime.Now.Month,
             year: DateTime.Now.Year,
             recipientEmail: supplier.RecipientEmail
@@ -69,7 +71,7 @@ foreach (var supplier in suppliers)
         successCount++;
     } catch (Exception ex)
     {
-        Log.Error(ex, $"Error occurred while processing supplier '{supplier.SupplierName}'");
+        Log.Error(ex, $"Error occurred while processing supplier '{supplier.Name}'");
         failCount++;
     }
 }

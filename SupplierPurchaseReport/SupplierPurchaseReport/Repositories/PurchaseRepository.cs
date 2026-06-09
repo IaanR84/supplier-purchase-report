@@ -24,15 +24,14 @@ namespace SupplierPurchaseReport.Repositories
                     k.Code,
                     k.Name,
                     t.DatePurchased,
-                    t.BrancNr,
-                    b.BrancName AS BranchNaam,
+                    t.BranchNr,
+                    b.BranchName,
                     t.Amount
                 FROM Purchases t
                 JOIN Supplier k
-                    ON k.Code = t.Supplier AND k.Tipe = 'K'
+                    ON k.Code = t.Code 
                 JOIN Branch b
-                    ON t.Code = b.Code
-                   AND t.Branchnr = b.Branchnr
+                    ON t.Branchnr = b.Branchnr
                 WHERE k.Name LIKE @SupplierName
                 AND MONTH(t.DatePurchased) = @Month
                 AND YEAR(t.DatePurchased) = @Year";

@@ -8,7 +8,7 @@ namespace SupplierPurchaseReport.Models
 {
     public class Supplier
     {
-        public required string SupplierName { get; set; }
+        public required string Name { get; set; }
         public required string RecipientEmail { get; set; }
 
 

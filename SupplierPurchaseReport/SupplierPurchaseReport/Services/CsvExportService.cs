@@ -17,7 +17,7 @@ namespace SupplierPurchaseReport.Services
                     purchase.Code,
                     purchase.Name,
                     purchase.DatePurchased.ToString("yyyy/MM/dd"),
-                    purchase.Branchnr,
+                    purchase.BranchNr,
                     purchase.BranchName,
                     purchase.Amount.ToString("F2"));
 

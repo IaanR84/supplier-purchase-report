@@ -1,0 +1,21 @@
+2026-06-10 11:06:15.326 +02:00 [INF] Now listening on: http://localhost:5000
+2026-06-10 11:06:15.405 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-10 11:06:15.407 +02:00 [INF] Hosting environment: Production
+2026-06-10 11:06:15.409 +02:00 [INF] Content root path: C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport
+2026-06-10 11:06:38.782 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/suppliers - null null
+2026-06-10 11:06:38.870 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.GetAll (SupplierPurchaseReport)'
+2026-06-10 11:06:38.962 +02:00 [INF] Route matched with {action = "GetAll", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-06-10 11:06:39.728 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SupplierPurchaseReport.Models.Supplier, SupplierPurchaseReport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-10 11:06:39.829 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.GetAll (SupplierPurchaseReport) in 856.5004ms
+2026-06-10 11:06:39.835 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.GetAll (SupplierPurchaseReport)'
+2026-06-10 11:06:39.844 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/suppliers - 200 null application/json; charset=utf-8 1074.5334ms
+2026-06-10 11:06:40.068 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/favicon.ico - null null
+2026-06-10 11:06:40.075 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/favicon.ico - 404 0 null 7.6199ms
+2026-06-10 11:06:40.084 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5000/favicon.ico, Response status code: 404
+2026-06-10 11:06:43.002 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5000/api/suppliers - null null
+2026-06-10 11:06:43.015 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.GetAll (SupplierPurchaseReport)'
+2026-06-10 11:06:43.018 +02:00 [INF] Route matched with {action = "GetAll", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-06-10 11:06:43.037 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SupplierPurchaseReport.Models.Supplier, SupplierPurchaseReport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-10 11:06:43.042 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.GetAll (SupplierPurchaseReport) in 19.6092ms
+2026-06-10 11:06:43.048 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.GetAll (SupplierPurchaseReport)'
+2026-06-10 11:06:43.051 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5000/api/suppliers - 200 null application/json; charset=utf-8 49.5244ms

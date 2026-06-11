@@ -5,7 +5,7 @@ using Dapper;
 
 namespace SupplierPurchaseReport.Repositories
 {
-    public class SupplierRepository: ISupplierRepository
+    public class SupplierRepository : ISupplierRepository
     {
         private readonly string _connectionString;
 
@@ -25,13 +25,26 @@ namespace SupplierPurchaseReport.Repositories
                 from Supplier";
 
             var suppliers = await connection.QueryAsync<Supplier>(sql);
-            
+
             return suppliers.ToList();
-
-
-
         }
 
+
+        public async Task<Supplier?> GetSupplierById(string id)
+        {
+
+            using var connection = new SqlConnection(_connectionString);
+        await connection.OpenAsync();
+
+        var sql = @"
+            Select Name,
+                   RecipientEmail
+                from Supplier
+            where code = @id";
+        var supplier = await connection.QueryFirstOrDefaultAsync<Supplier>(sql, new { id });
+
+            return supplier;
+        }
     }
 
 }

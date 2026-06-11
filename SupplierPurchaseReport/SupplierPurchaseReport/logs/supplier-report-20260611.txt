@@ -1,0 +1,148 @@
+2026-06-11 16:02:13.569 +02:00 [INF] Now listening on: https://localhost:52618
+2026-06-11 16:02:13.620 +02:00 [INF] Now listening on: http://localhost:52619
+2026-06-11 16:02:13.698 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-11 16:02:13.700 +02:00 [INF] Hosting environment: Development
+2026-06-11 16:02:13.702 +02:00 [INF] Content root path: C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport
+2026-06-11 16:02:16.053 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/ - null null
+2026-06-11 16:02:16.421 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/ - 404 null null 399.5187ms
+2026-06-11 16:02:16.431 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-06-11 16:02:28.853 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger - null null
+2026-06-11 16:02:28.872 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger - 301 null null 19.3206ms
+2026-06-11 16:02:28.877 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/index.html - null null
+2026-06-11 16:02:29.047 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/index.html - 200 null text/html;charset=utf-8 170.5015ms
+2026-06-11 16:02:29.081 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/swagger-ui.css - null null
+2026-06-11 16:02:29.089 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/swagger-ui-bundle.js - null null
+2026-06-11 16:02:29.089 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/swagger-ui-standalone-preset.js - null null
+2026-06-11 16:02:29.089 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-11 16:02:29.089 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_vs/browserLink - null null
+2026-06-11 16:02:29.115 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - 200 14949 application/javascript; charset=utf-8 25.7016ms
+2026-06-11 16:02:29.155 +02:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2026-06-11 16:02:29.156 +02:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2026-06-11 16:02:29.170 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/swagger-ui.css - 200 152034 text/css 88.791ms
+2026-06-11 16:02:29.170 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/swagger-ui-standalone-preset.js - 200 230280 text/javascript 81.0467ms
+2026-06-11 16:02:29.190 +02:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2026-06-11 16:02:29.213 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/swagger-ui-bundle.js - 200 1456926 text/javascript 124.2383ms
+2026-06-11 16:02:29.253 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_vs/browserLink - 200 null text/javascript; charset=UTF-8 164.4437ms
+2026-06-11 16:02:29.656 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - null null
+2026-06-11 16:02:29.672 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 15.9155ms
+2026-06-11 16:02:29.685 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/favicon-32x32.png - null null
+2026-06-11 16:02:29.690 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-06-11 16:02:29.693 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/favicon-32x32.png - 200 628 image/png 8.4548ms
+2026-06-11 16:02:33.369 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:52618/ - null null
+2026-06-11 16:02:33.399 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:52618/ - 404 null null 30.5833ms
+2026-06-11 16:02:33.410 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-06-11 16:03:26.785 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/api/Suppliers - null null
+2026-06-11 16:03:26.798 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.GetAll (SupplierPurchaseReport)'
+2026-06-11 16:03:26.841 +02:00 [INF] Route matched with {action = "GetAll", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-06-11 16:03:27.706 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[SupplierPurchaseReport.Models.Supplier, SupplierPurchaseReport, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-06-11 16:03:27.730 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.GetAll (SupplierPurchaseReport) in 877.6149ms
+2026-06-11 16:03:27.734 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.GetAll (SupplierPurchaseReport)'
+2026-06-11 16:03:27.736 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/api/Suppliers - 200 null application/json; charset=utf-8 951.1329ms
+2026-06-11 16:10:50.848 +02:00 [INF] Now listening on: https://localhost:52618
+2026-06-11 16:10:50.905 +02:00 [INF] Now listening on: http://localhost:52619
+2026-06-11 16:10:50.985 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-11 16:10:50.986 +02:00 [INF] Hosting environment: Development
+2026-06-11 16:10:50.987 +02:00 [INF] Content root path: C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport
+2026-06-11 16:10:51.661 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/ - null null
+2026-06-11 16:10:51.864 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/ - 404 null null 212.5301ms
+2026-06-11 16:10:51.873 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-06-11 16:10:58.992 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/index.html - null null
+2026-06-11 16:10:59.109 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/index.html - 200 null text/html;charset=utf-8 117.813ms
+2026-06-11 16:10:59.138 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-11 16:10:59.142 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_vs/browserLink - null null
+2026-06-11 16:10:59.155 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - 200 14949 application/javascript; charset=utf-8 17.1587ms
+2026-06-11 16:10:59.204 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_vs/browserLink - 200 null text/javascript; charset=UTF-8 62.5035ms
+2026-06-11 16:10:59.559 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - null null
+2026-06-11 16:10:59.578 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 18.769ms
+2026-06-11 16:10:59.682 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:52618/ - null null
+2026-06-11 16:10:59.695 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:52618/ - 404 null null 12.4428ms
+2026-06-11 16:10:59.699 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-06-11 16:11:16.468 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=06&year=2026 - null 0
+2026-06-11 16:11:16.479 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-06-11 16:11:16.528 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-06-11 16:11:38.049 +02:00 [INF] Now listening on: https://localhost:52618
+2026-06-11 16:11:38.095 +02:00 [INF] Now listening on: http://localhost:52619
+2026-06-11 16:11:38.194 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-11 16:11:38.196 +02:00 [INF] Hosting environment: Development
+2026-06-11 16:11:38.199 +02:00 [INF] Content root path: C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport
+2026-06-11 16:11:38.630 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/ - null null
+2026-06-11 16:11:38.830 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/ - 404 null null 209.3608ms
+2026-06-11 16:11:38.840 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-06-11 16:11:44.098 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/index.html - null null
+2026-06-11 16:11:44.237 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/index.html - 200 null text/html;charset=utf-8 139.3969ms
+2026-06-11 16:11:44.273 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-11 16:11:44.274 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_vs/browserLink - null null
+2026-06-11 16:11:44.287 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - 200 14949 application/javascript; charset=utf-8 13.7846ms
+2026-06-11 16:11:44.334 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_vs/browserLink - 200 null text/javascript; charset=UTF-8 59.8618ms
+2026-06-11 16:11:44.519 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - null null
+2026-06-11 16:11:44.532 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 13.7108ms
+2026-06-11 16:11:55.793 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=06&year=2026 - null 0
+2026-06-11 16:11:55.803 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-06-11 16:11:55.855 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-06-11 16:12:17.804 +02:00 [ERR] Failed to run daily report for ABC Foods
+System.Net.Mail.SmtpException: Failure sending mail.
+ ---> System.Net.Sockets.SocketException (10060): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at System.Net.Mail.SmtpConnection.InitializeConnectionAsync(String host, Int32 port)
+   at System.Net.Mail.SmtpConnection.GetConnectionAsync[TIOAdapter](String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Mail.SmtpClient.SendAsyncInternal[TIOAdapter](MailMessage message, Boolean invokeSendCompleted, Object userToken, Boolean forceWrapExceptions, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.SendAsyncInternal[TIOAdapter](MailMessage message, Boolean invokeSendCompleted, Object userToken, Boolean forceWrapExceptions, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Net.Mail.SmtpConnection.GetConnectionAsync[TIOAdapter](String host, Int32 port, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Net.Mail.SmtpConnection.InitializeConnectionAsync(String host, Int32 port)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__174_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.PortableThreadPool.IOCompletionPoller.Event.Invoke()
+   at System.Threading.ThreadPoolTypedWorkItemQueue.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+   at System.Threading.Thread.StartCallback()
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SmtpClient.<SendMailAsync>g__WaitAndRethrowIfNeeded|75_0(Task`1 task)
+   at SupplierPurchaseReport.Services.EmailService.SendAsync(String to, String subject, String fileName, Byte[] attachment) in C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport\Services\EmailService.cs:line 40
+   at SupplierPurchaseReport.Services.SupplierReportService.RunDailyReport(String supplierName, Int32 month, Int32 year, String recipientEmail) in C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport\Services\SupplierReportService.cs:line 39
+2026-06-11 16:12:17.853 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2026-06-11 16:12:17.864 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport) in 21996.8879ms
+2026-06-11 16:12:17.868 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-06-11 16:12:17.875 +02:00 [INF] Request finished HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=06&year=2026 - 200 null text/plain; charset=utf-8 22081.9076ms

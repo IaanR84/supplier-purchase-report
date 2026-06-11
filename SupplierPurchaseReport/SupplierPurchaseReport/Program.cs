@@ -4,6 +4,7 @@ using SupplierPurchaseReport.Services;
 using SupplierPurchaseReport.Settings;
 using Serilog;
 
+
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Information()
     .WriteTo.Console()
@@ -32,6 +33,9 @@ if (!ValidateSettings(connectionString, emailSettings))
 }
 
 builder.Services.AddControllers();
+// After builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<IPurchaseRepository>(
     new PurchaseRepository(connectionString));
 builder.Services.AddSingleton<ISupplierRepository>(
@@ -47,6 +51,9 @@ builder.Services.AddSingleton<IEmailService>(new EmailService(
 builder.Services.AddSingleton<ISupplierReportService, SupplierReportService>();
 
 var app = builder.Build();
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.MapControllers();
 

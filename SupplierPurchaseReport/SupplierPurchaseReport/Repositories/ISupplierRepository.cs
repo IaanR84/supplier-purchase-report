@@ -10,5 +10,7 @@ namespace SupplierPurchaseReport.Repositories
     public interface ISupplierRepository
     {
         Task<List<Supplier>> GetAllSuppliers();
+        Task<Supplier?> GetSupplierById(string id);
     }
+
 }

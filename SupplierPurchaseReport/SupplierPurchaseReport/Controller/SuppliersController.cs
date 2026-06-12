@@ -33,6 +33,20 @@ public class SuppliersController : ControllerBase
         [FromQuery] int month,
         [FromQuery] int year)
     {
+
+        if (month < 1 || month > 12 || year < 2000 || year > 2100)
+        {
+            var validationResult = new ReportResult
+            {
+                Month = month,
+                Year = year,
+                Success = false,
+                Message = "Invalid input. Month must be between 1 and 12, year between 2000 and 2100.",
+                GeneratedAt = DateTime.UtcNow
+            };
+
+            return BadRequest(validationResult);
+        }
         var supplier = await _supplierRepository.GetSupplierById(id);
 
 

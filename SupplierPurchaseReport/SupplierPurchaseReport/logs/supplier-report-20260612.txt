@@ -1,0 +1,178 @@
+2026-06-12 13:04:43.424 +02:00 [INF] Now listening on: https://localhost:52618
+2026-06-12 13:04:43.482 +02:00 [INF] Now listening on: http://localhost:52619
+2026-06-12 13:04:43.556 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-12 13:04:43.557 +02:00 [INF] Hosting environment: Development
+2026-06-12 13:04:43.558 +02:00 [INF] Content root path: C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport
+2026-06-12 13:04:44.564 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/ - null null
+2026-06-12 13:04:44.835 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/ - 404 null null 290.5831ms
+2026-06-12 13:04:44.846 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-06-12 13:04:47.845 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/index.html - null null
+2026-06-12 13:04:47.990 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/index.html - 200 null text/html;charset=utf-8 145.5492ms
+2026-06-12 13:04:48.040 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-12 13:04:48.044 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_vs/browserLink - null null
+2026-06-12 13:04:48.068 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - 200 14949 application/javascript; charset=utf-8 27.1627ms
+2026-06-12 13:04:48.142 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_vs/browserLink - 200 null text/javascript; charset=UTF-8 97.5137ms
+2026-06-12 13:04:48.466 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - null null
+2026-06-12 13:04:48.482 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.0765ms
+2026-06-12 13:05:00.250 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=06&year=2026 - null 0
+2026-06-12 13:05:00.258 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-06-12 13:05:00.315 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-06-12 13:05:22.305 +02:00 [ERR] Failed to run daily report for ABC Foods
+System.Net.Mail.SmtpException: Failure sending mail.
+ ---> System.Net.Sockets.SocketException (10060): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at System.Net.Mail.SmtpConnection.InitializeConnectionAsync(String host, Int32 port)
+   at System.Net.Mail.SmtpConnection.GetConnectionAsync[TIOAdapter](String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Mail.SmtpClient.SendAsyncInternal[TIOAdapter](MailMessage message, Boolean invokeSendCompleted, Object userToken, Boolean forceWrapExceptions, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.SendAsyncInternal[TIOAdapter](MailMessage message, Boolean invokeSendCompleted, Object userToken, Boolean forceWrapExceptions, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Net.Mail.SmtpConnection.GetConnectionAsync[TIOAdapter](String host, Int32 port, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Net.Mail.SmtpConnection.InitializeConnectionAsync(String host, Int32 port)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Runtime.CompilerServices.TaskAwaiter.<>c.<OutputWaitEtwEvents>b__12_0(Action innerContinuation, Task innerTask)
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__174_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.PortableThreadPool.IOCompletionPoller.Event.Invoke()
+   at System.Threading.ThreadPoolTypedWorkItemQueue.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+   at System.Threading.Thread.StartCallback()
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SmtpClient.<SendMailAsync>g__WaitAndRethrowIfNeeded|75_0(Task`1 task)
+   at SupplierPurchaseReport.Services.EmailService.SendAsync(String to, String subject, String fileName, Byte[] attachment) in C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport\Services\EmailService.cs:line 40
+   at SupplierPurchaseReport.Services.SupplierReportService.RunDailyReport(String supplierName, Int32 month, Int32 year, String recipientEmail) in C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport\Services\SupplierReportService.cs:line 39
+2026-06-12 13:05:22.342 +02:00 [INF] Executing OkObjectResult, writing value of type 'SupplierPurchaseReport.Models.ReportResult'.
+2026-06-12 13:05:22.368 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport) in 22041.2775ms
+2026-06-12 13:05:22.372 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-06-12 13:05:22.376 +02:00 [INF] Request finished HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=06&year=2026 - 200 null application/json; charset=utf-8 22125.3234ms
+2026-06-12 13:24:08.671 +02:00 [INF] Now listening on: https://localhost:52618
+2026-06-12 13:24:08.732 +02:00 [INF] Now listening on: http://localhost:52619
+2026-06-12 13:24:08.811 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-06-12 13:24:08.812 +02:00 [INF] Hosting environment: Development
+2026-06-12 13:24:08.814 +02:00 [INF] Content root path: C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport
+2026-06-12 13:24:09.586 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/ - null null
+2026-06-12 13:24:09.852 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/ - 404 null null 282.2198ms
+2026-06-12 13:24:09.863 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-06-12 13:24:12.488 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/index.html - null null
+2026-06-12 13:24:12.646 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/index.html - 200 null text/html;charset=utf-8 157.8354ms
+2026-06-12 13:24:12.675 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - null null
+2026-06-12 13:24:12.677 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_vs/browserLink - null null
+2026-06-12 13:24:12.716 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - 200 14949 application/javascript; charset=utf-8 41.4192ms
+2026-06-12 13:24:12.842 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_vs/browserLink - 200 null text/javascript; charset=UTF-8 165.3402ms
+2026-06-12 13:24:13.136 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - null null
+2026-06-12 13:24:13.151 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.9233ms
+2026-06-12 13:24:16.818 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:52618/ - null null
+2026-06-12 13:24:16.836 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:52618/ - 404 null null 17.61ms
+2026-06-12 13:24:16.841 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-06-12 13:24:23.401 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/123/report?month=06&year=2026 - null 0
+2026-06-12 13:24:23.410 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-06-12 13:24:23.473 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-06-12 13:24:24.118 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'SupplierPurchaseReport.Models.ReportResult'.
+2026-06-12 13:24:24.149 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport) in 663.5409ms
+2026-06-12 13:24:24.152 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-06-12 13:24:24.154 +02:00 [INF] Request finished HTTP/2 POST https://localhost:52618/api/Suppliers/123/report?month=06&year=2026 - 404 null application/json; charset=utf-8 752.2649ms
+2026-06-12 13:24:45.294 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=06&year=2026 - null 0
+2026-06-12 13:24:45.302 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-06-12 13:24:45.305 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-06-12 13:25:06.643 +02:00 [ERR] Failed to run daily report for ABC Foods
+System.Net.Mail.SmtpException: Failure sending mail.
+ ---> System.Net.Sockets.SocketException (10060): A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+--- End of stack trace from previous location ---
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at System.Net.Mail.SmtpConnection.InitializeConnectionAsync(String host, Int32 port)
+   at System.Net.Mail.SmtpConnection.GetConnectionAsync[TIOAdapter](String host, Int32 port, CancellationToken cancellationToken)
+   at System.Net.Mail.SmtpClient.SendAsyncInternal[TIOAdapter](MailMessage message, Boolean invokeSendCompleted, Object userToken, Boolean forceWrapExceptions, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Mail.SmtpClient.SendAsyncInternal[TIOAdapter](MailMessage message, Boolean invokeSendCompleted, Object userToken, Boolean forceWrapExceptions, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Net.Mail.SmtpConnection.GetConnectionAsync[TIOAdapter](String host, Int32 port, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Net.Mail.SmtpConnection.InitializeConnectionAsync(String host, Int32 port)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(Exception exception, Task`1& taskField)
+   at System.Net.Sockets.TcpClient.CompleteConnectAsync(Task task)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext(Thread threadPoolThread)
+   at System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.AsyncStateMachineBox`1.MoveNext()
+   at System.Threading.Tasks.AwaitTaskContinuation.RunOrScheduleAction(Action action, Boolean allowInlining)
+   at System.Threading.Tasks.Task.RunContinuations(Object continuationObject)
+   at System.Threading.Tasks.Task.TrySetException(Object exceptionObject)
+   at System.Threading.Tasks.ValueTask.ValueTaskSourceAsTask.<>c.<.cctor>b__4_0(Object state)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Net.Sockets.SocketAsyncEventArgs.<>c.<.cctor>b__174_0(UInt32 errorCode, UInt32 numBytes, NativeOverlapped* nativeOverlapped)
+   at System.Threading.PortableThreadPool.IOCompletionPoller.Event.Invoke()
+   at System.Threading.ThreadPoolTypedWorkItemQueue.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+   at System.Threading.Thread.StartCallback()
+--- End of stack trace from previous location ---
+   at System.Net.Mail.SmtpClient.<SendMailAsync>g__WaitAndRethrowIfNeeded|75_0(Task`1 task)
+   at SupplierPurchaseReport.Services.EmailService.SendAsync(String to, String subject, String fileName, Byte[] attachment) in C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport\Services\EmailService.cs:line 40
+   at SupplierPurchaseReport.Services.SupplierReportService.RunDailyReport(String supplierName, Int32 month, Int32 year, String recipientEmail) in C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport\Services\SupplierReportService.cs:line 39
+2026-06-12 13:25:06.665 +02:00 [INF] Executing OkObjectResult, writing value of type 'SupplierPurchaseReport.Models.ReportResult'.
+2026-06-12 13:25:06.668 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport) in 21360.1796ms
+2026-06-12 13:25:06.670 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-06-12 13:25:06.672 +02:00 [INF] Request finished HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=06&year=2026 - 200 null application/json; charset=utf-8 21378.2675ms

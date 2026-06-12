@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SupplierPurchaseReport.Models;
 using SupplierPurchaseReport.Repositories;
 using SupplierPurchaseReport.Services;
 
@@ -34,8 +35,20 @@ public class SuppliersController : ControllerBase
     {
         var supplier = await _supplierRepository.GetSupplierById(id);
 
+
+        var result = new ReportResult
+        {
+            Month = month,
+            Year = year,
+            Success = false,
+            Message = $"Supplier with ID {id} not found.",
+            GeneratedAt = DateTime.UtcNow
+        };
+
         if (supplier == null)
-            return NotFound($"Supplier with ID {id} not found.");
+            return NotFound(result);  
+
+        
 
         await _supplierReportService.RunDailyReport(
             supplierName: supplier.Name,
@@ -44,6 +57,17 @@ public class SuppliersController : ControllerBase
             recipientEmail: supplier.RecipientEmail
         );
 
-        return Ok("Report triggered successfully.");
+        result = new ReportResult
+        {
+            SupplierName = supplier.Name,
+            RecipientEmail = supplier.RecipientEmail,
+            Month = month,
+            Year = year,
+            Success = true,
+            Message = "Report triggered successfully.",
+            GeneratedAt = DateTime.UtcNow
+        };
+
+        return Ok(result);
     }
 }

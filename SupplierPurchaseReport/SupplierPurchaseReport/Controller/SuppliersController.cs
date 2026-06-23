@@ -60,28 +60,20 @@ public class SuppliersController : ControllerBase
         };
 
         if (supplier == null)
-            return NotFound(result);  
+            return NotFound(result);
 
-        
 
-        await _supplierReportService.RunDailyReport(
-            supplierName: supplier.Name,
-            month: month,
-            year: year,
-            recipientEmail: supplier.RecipientEmail
-        );
 
-        result = new ReportResult
-        {
-            SupplierName = supplier.Name,
-            RecipientEmail = supplier.RecipientEmail,
-            Month = month,
-            Year = year,
-            Success = true,
-            Message = "Report triggered successfully.",
-            GeneratedAt = DateTime.UtcNow
-        };
+ var reportResult = await _supplierReportService.RunDailyReport(
+     supplierName: supplier.Name,
+     month: month,
+     year: year,
+     recipientEmail: supplier.RecipientEmail
+ );
 
-        return Ok(result);
+        if (!reportResult.Success)
+            return BadRequest(reportResult);
+
+        return Ok(reportResult);
     }
 }

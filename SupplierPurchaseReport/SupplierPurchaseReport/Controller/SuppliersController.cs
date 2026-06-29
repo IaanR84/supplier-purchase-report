@@ -36,35 +36,16 @@ public class SuppliersController : ControllerBase
 
         if (month < 1 || month > 12 || year < 2000 || year > 2100)
         {
-            var validationResult = new ReportResult
-            {
-                Month = month,
-                Year = year,
-                Success = false,
-                Message = "Invalid input. Month must be between 1 and 12, year between 2000 and 2100.",
-                GeneratedAt = DateTime.UtcNow
-            };
-
-            return BadRequest(validationResult);
+            return BadRequest(ReportResult.ValidationFailure("Invalid input. Month must be between 1 and 12, year between 2000 and 2100.", month, year));
         }
         var supplier = await _supplierRepository.GetSupplierById(id);
 
-
-        var result = new ReportResult
-        {
-            Month = month,
-            Year = year,
-            Success = false,
-            Message = $"Supplier with ID {id} not found.",
-            GeneratedAt = DateTime.UtcNow
-        };
-
         if (supplier == null)
-            return NotFound(result);
+            return NotFound(ReportResult.NotFound($"Supplier with ID {id} not found.", month, year));
 
 
 
- var reportResult = await _supplierReportService.RunDailyReport(
+        var reportResult = await _supplierReportService.RunDailyReport(
      supplierName: supplier.Name,
      month: month,
      year: year,

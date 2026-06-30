@@ -27,6 +27,11 @@ public class SuppliersController : ControllerBase
         return Ok(suppliers);
     }
 
+    private static bool IsValidMonthYear(int month, int year)
+    {
+        return month >= 1 && month <= 12 && year >= 2000 && year <= 2100;
+    }
+
     [HttpPost("{id}/report")]
     public async Task<IActionResult> RunReport(
         string id,
@@ -34,7 +39,9 @@ public class SuppliersController : ControllerBase
         [FromQuery] int year)
     {
 
-        if (month < 1 || month > 12 || year < 2000 || year > 2100)
+
+
+        if (!IsValidMonthYear(month, year))
         {
             return BadRequest(ReportResult.ValidationFailure("Invalid input. Month must be between 1 and 12, year between 2000 and 2100.", month, year));
         }

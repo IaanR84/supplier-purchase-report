@@ -32,6 +32,11 @@ public class SuppliersController : ControllerBase
         return month >= 1 && month <= 12 && year >= 2000 && year <= 2100;
     }
 
+    private async Task<Supplier?> FindSupplierOrNull(string supplierCode)
+    {
+        return await _supplierRepository.GetSupplierById(supplierCode);
+    }
+
     [HttpPost("{id}/report")]
     public async Task<IActionResult> RunReport(
         string id,
@@ -39,13 +44,12 @@ public class SuppliersController : ControllerBase
         [FromQuery] int year)
     {
 
-
-
         if (!IsValidMonthYear(month, year))
         {
             return BadRequest(ReportResult.ValidationFailure("Invalid input. Month must be between 1 and 12, year between 2000 and 2100.", month, year));
         }
-        var supplier = await _supplierRepository.GetSupplierById(id);
+
+        var supplier = await FindSupplierOrNull(id);
 
         if (supplier == null)
             return NotFound(ReportResult.NotFound($"Supplier with ID {id} not found.", month, year));

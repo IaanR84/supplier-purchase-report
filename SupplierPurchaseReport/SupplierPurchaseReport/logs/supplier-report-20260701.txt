@@ -49,3 +49,115 @@
 2026-07-01 11:30:40.120 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport) in 5.4367ms
 2026-07-01 11:30:40.122 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
 2026-07-01 11:30:40.123 +02:00 [INF] Request finished HTTP/2 POST https://localhost:52618/api/Suppliers/SUP003/report?month=12&year=2026 - 404 null application/json; charset=utf-8 24.3726ms
+2026-07-01 12:38:22.193 +02:00 [INF] Now listening on: https://localhost:52618
+2026-07-01 12:38:22.243 +02:00 [INF] Now listening on: http://localhost:52619
+2026-07-01 12:38:22.315 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 12:38:22.316 +02:00 [INF] Hosting environment: Development
+2026-07-01 12:38:22.317 +02:00 [INF] Content root path: C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport
+2026-07-01 12:38:23.103 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/ - null null
+2026-07-01 12:38:23.338 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/ - 404 null null 259.8165ms
+2026-07-01 12:38:23.351 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-07-01 12:38:26.770 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/index.html - null null
+2026-07-01 12:38:26.924 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/index.html - 200 null text/html;charset=utf-8 153.9807ms
+2026-07-01 12:38:27.026 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 12:38:27.040 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - 200 14949 application/javascript; charset=utf-8 14.0947ms
+2026-07-01 12:38:27.047 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_vs/browserLink - null null
+2026-07-01 12:38:27.100 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.597ms
+2026-07-01 12:38:27.565 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - null null
+2026-07-01 12:38:27.581 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 16.2142ms
+2026-07-01 12:38:41.459 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/SUP10/report?month=12&year=2026 - null 0
+2026-07-01 12:38:41.465 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:38:41.510 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-07-01 12:38:42.015 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'SupplierPurchaseReport.Models.ReportResult'.
+2026-07-01 12:38:42.037 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport) in 518.9816ms
+2026-07-01 12:38:42.039 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:38:42.044 +02:00 [INF] Request finished HTTP/2 POST https://localhost:52618/api/Suppliers/SUP10/report?month=12&year=2026 - 404 null application/json; charset=utf-8 584.6798ms
+2026-07-01 12:38:57.098 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=12&year=2026 - null 0
+2026-07-01 12:38:57.103 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:38:57.105 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-07-01 12:38:57.176 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'SupplierPurchaseReport.Models.ReportResult'.
+2026-07-01 12:38:57.178 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport) in 71.4547ms
+2026-07-01 12:38:57.180 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:38:57.182 +02:00 [INF] Request finished HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=12&year=2026 - 400 null application/json; charset=utf-8 83.236ms
+2026-07-01 12:39:07.655 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=13&year=2026 - null 0
+2026-07-01 12:39:07.658 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:39:07.660 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-07-01 12:39:07.663 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'SupplierPurchaseReport.Models.ReportResult'.
+2026-07-01 12:39:07.665 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport) in 3.28ms
+2026-07-01 12:39:07.667 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:39:07.668 +02:00 [INF] Request finished HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=13&year=2026 - 400 null application/json; charset=utf-8 13.1839ms
+2026-07-01 12:39:18.036 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=01&year=2026 - null 0
+2026-07-01 12:39:18.040 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:39:18.042 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-07-01 12:39:18.047 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'SupplierPurchaseReport.Models.ReportResult'.
+2026-07-01 12:39:18.049 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport) in 5.2001ms
+2026-07-01 12:39:18.051 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:39:18.052 +02:00 [INF] Request finished HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=01&year=2026 - 400 null application/json; charset=utf-8 16.1837ms
+2026-07-01 12:40:41.859 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/index.html - null null
+2026-07-01 12:40:41.973 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/index.html - 200 null text/html;charset=utf-8 113.5114ms
+2026-07-01 12:40:42.011 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 12:40:42.013 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_vs/browserLink - null null
+2026-07-01 12:40:42.020 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - 200 14949 application/javascript; charset=utf-8 9.3359ms
+2026-07-01 12:40:42.066 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.6939ms
+2026-07-01 12:40:42.193 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - null null
+2026-07-01 12:40:42.202 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 9.161ms
+2026-07-01 12:40:42.210 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/favicon-32x32.png - null null
+2026-07-01 12:40:42.226 +02:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2026-07-01 12:40:42.228 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/favicon-32x32.png - 200 628 image/png 18.624ms
+2026-07-01 12:42:20.505 +02:00 [INF] Now listening on: https://localhost:52618
+2026-07-01 12:42:20.558 +02:00 [INF] Now listening on: http://localhost:52619
+2026-07-01 12:42:20.638 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 12:42:20.648 +02:00 [INF] Hosting environment: Development
+2026-07-01 12:42:20.658 +02:00 [INF] Content root path: C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport
+2026-07-01 12:42:21.193 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/ - null null
+2026-07-01 12:42:21.529 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/ - 404 null null 352.015ms
+2026-07-01 12:42:21.543 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-07-01 12:42:23.564 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/index.html - null null
+2026-07-01 12:42:23.684 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/index.html - 200 null text/html;charset=utf-8 119.6608ms
+2026-07-01 12:42:23.703 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 12:42:23.708 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_vs/browserLink - null null
+2026-07-01 12:42:23.714 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - 200 14949 application/javascript; charset=utf-8 10.9219ms
+2026-07-01 12:42:23.761 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.8501ms
+2026-07-01 12:42:24.050 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - null null
+2026-07-01 12:42:24.064 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.0534ms
+2026-07-01 12:42:48.887 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/sup001/report?month=12&year=2026 - null 0
+2026-07-01 12:42:48.898 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:42:48.946 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-07-01 12:44:35.017 +02:00 [INF] Now listening on: https://localhost:52618
+2026-07-01 12:44:35.074 +02:00 [INF] Now listening on: http://localhost:52619
+2026-07-01 12:44:35.155 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 12:44:35.157 +02:00 [INF] Hosting environment: Development
+2026-07-01 12:44:35.159 +02:00 [INF] Content root path: C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport
+2026-07-01 12:44:35.461 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/ - null null
+2026-07-01 12:44:35.617 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/ - 404 null null 159.1183ms
+2026-07-01 12:44:35.632 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-07-01 12:44:39.499 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/index.html - null null
+2026-07-01 12:44:39.608 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/index.html - 200 null text/html;charset=utf-8 108.3763ms
+2026-07-01 12:44:39.628 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 12:44:39.632 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_vs/browserLink - null null
+2026-07-01 12:44:39.639 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - 200 14949 application/javascript; charset=utf-8 11.5651ms
+2026-07-01 12:44:39.743 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_vs/browserLink - 200 null text/javascript; charset=UTF-8 110.5977ms
+2026-07-01 12:44:39.956 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - null null
+2026-07-01 12:44:39.968 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 11.1523ms
+2026-07-01 12:44:41.617 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:52618/ - null null
+2026-07-01 12:44:41.629 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:52618/ - 404 null null 12.2111ms
+2026-07-01 12:44:41.634 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:52618/, Response status code: 404
+2026-07-01 12:44:56.758 +02:00 [INF] Request starting HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=12&year=2026 - null 0
+2026-07-01 12:44:56.764 +02:00 [INF] Executing endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:44:56.797 +02:00 [INF] Route matched with {action = "RunReport", controller = "Suppliers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] RunReport(System.String, Int32, Int32) on controller SupplierPurchaseReport.Controllers.SuppliersController (SupplierPurchaseReport).
+2026-07-01 12:44:56.823 +02:00 [INF] Executed action SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport) in 19.7852ms
+2026-07-01 12:44:56.825 +02:00 [INF] Executed endpoint 'SupplierPurchaseReport.Controllers.SuppliersController.RunReport (SupplierPurchaseReport)'
+2026-07-01 12:44:56.835 +02:00 [INF] Request finished HTTP/2 POST https://localhost:52618/api/Suppliers/SUP001/report?month=12&year=2026 - 500 null application/json; charset=utf-8 77.119ms
+2026-07-01 12:45:27.949 +02:00 [INF] Now listening on: https://localhost:52618
+2026-07-01 12:45:27.988 +02:00 [INF] Now listening on: http://localhost:52619
+2026-07-01 12:45:28.048 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-01 12:45:28.049 +02:00 [INF] Hosting environment: Development
+2026-07-01 12:45:28.051 +02:00 [INF] Content root path: C:\Users\iaan\source\repos\supplier-purchase-report\SupplierPurchaseReport\SupplierPurchaseReport
+2026-07-01 12:45:28.598 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/index.html - null null
+2026-07-01 12:45:28.784 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/index.html - 200 null text/html;charset=utf-8 188.0333ms
+2026-07-01 12:45:28.813 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_vs/browserLink - null null
+2026-07-01 12:45:28.813 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - null null
+2026-07-01 12:45:28.829 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_framework/aspnetcore-browser-refresh.js - 200 14949 application/javascript; charset=utf-8 16.3901ms
+2026-07-01 12:45:28.864 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/_vs/browserLink - 200 null text/javascript; charset=UTF-8 51.3814ms
+2026-07-01 12:45:29.005 +02:00 [INF] Request starting HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - null null
+2026-07-01 12:45:29.019 +02:00 [INF] Request finished HTTP/2 GET https://localhost:52618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 14.3069ms

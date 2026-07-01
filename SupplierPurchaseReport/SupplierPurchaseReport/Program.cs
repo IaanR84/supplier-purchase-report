@@ -1,8 +1,9 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Serilog;
+using SupplierPurchaseReport.Middleware;
 using SupplierPurchaseReport.Repositories;
 using SupplierPurchaseReport.Services;
 using SupplierPurchaseReport.Settings;
-using Serilog;
 
 
 Log.Logger = new LoggerConfiguration()
@@ -52,8 +53,12 @@ builder.Services.AddSingleton<ISupplierReportService, SupplierReportService>();
 
 var app = builder.Build();
 
+app.UseMiddleware<ExceptionMiddleware>();
+
 app.UseSwagger();
 app.UseSwaggerUI();
+
+
 
 app.MapControllers();
 
